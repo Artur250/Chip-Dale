@@ -1,0 +1,332 @@
+/* ==========================================================================
+   HEADER GENERAL
+   ========================================================================== */
+.header {
+  position: relative;
+  width: 100%;
+  height: clamp(140px, 15vw, 240px); /* Динамическая высота хедера */
+  z-index: 1000;
+  background:
+    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+    url("../../assets/images/backgroundlheader.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* INNER CONTAINER */
+.header__inner {
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(16px, 4vw);
+  position: relative;
+}
+
+/* LOGO */
+.logo {
+  display: block;
+  z-index: 1010;
+  max-width: 35%;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   DESKTOP NAV
+   ========================================================================== */
+.nav {
+  display: flex;
+  gap: 60px;
+}
+
+.nav__link {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: clamp(20px, 2.2vw, 35px); 
+  font-weight: 600;
+  transition: 0.25s ease;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.nav__link:hover {
+  color: #facc15;
+  transform: translateY(-2px);
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0%;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #16a34a,    
+    #2563eb,
+    #facc15
+  );
+  transition: 0.3s ease;
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+  width: 100%;
+}
+
+.nav__link.active {
+  color: #facc15;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 255, 255, 1) 120%
+  );
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   СОЦСЕТИ (КНОПКИ-КРУЖКИ)
+   ========================================================================== */
+.header__socials {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  z-index: 1010;
+}
+
+/* Идеально центрируем иконку внутри круга */
+.header__btn-circle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: auto !important; /* Сбрасываем смещение из мобильного меню */
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  padding: 0 !important; /* Убираем лишние внутренние отступы */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+/* Фиксируем размер и убираем любые внешние сдвиги у SVG */
+.header__btn-circle .header__btn-svg {
+  width: 28px !important;
+  height: 28px !important;
+  display: block !important;
+  margin: 0 !important; 
+}
+
+.header__btn-circle:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.1) !important;
+}
+
+.header__btn-circle--telegram {
+  background-color: #0088cc !important;
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.2);
+}
+.header__btn-circle--telegram:hover {
+  box-shadow: 0 6px 16px rgba(0, 136, 204, 0.35) !important;
+}
+
+.header__btn-circle--whatsapp {
+  background-color: #128c7e !important;
+  box-shadow: 0 4px 12px rgba(18, 140, 126, 0.2);
+}
+.header__btn-circle--whatsapp:hover {
+  box-shadow: 0 6px 16px rgba(18, 140, 126, 0.35) !important;
+}
+
+/* По умолчанию для ПК */
+.header__socials--desktop {
+  display: flex !important;
+}
+.header__socials--mobile {
+  display: none !important;
+}
+
+/* ==========================================================================
+   BURGER BUTTON
+   ========================================================================== */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  width: 36px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  z-index: 2500;
+}
+
+.burger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 4px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              top 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.2s ease;
+}
+
+.burger span:nth-child(1) { top: 0; }
+.burger span:nth-child(2) { top: 10px; }
+.burger span:nth-child(3) { top: 20px; }
+
+.burger--active span:nth-child(1) {
+  top: 10px;
+  transform: rotate(45deg);
+}
+.burger--active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+.burger--active span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-45deg);
+}
+
+/* ==========================================================================
+   MOBILE SIDE MENU & OVERLAY
+   ========================================================================== */
+.sideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(300px, 80vw);
+  height: 100vh;
+  background: rgba(15, 15, 15, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 110px 32px;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2000;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.25);
+}
+
+.sideMenu--open {
+  transform: translateX(0);
+}
+
+.sideMenu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sideMenu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Эффект ховера только для текстовых ссылок меню, не ломая кнопки */
+.sideMenu a:not(.header__btn-circle):hover {
+  color: #facc15;
+  transform: translateX(6px);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1900;
+}
+
+.overlay--show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* ==========================================================================
+   RESPONSIVE (Адаптивность)
+   ========================================================================== */
+@media (max-width: 950px) {
+  .nav {
+    display: none !important;
+  }
+
+  .burger {
+    display: block !important;
+  }
+
+  .logo {
+    max-width: 60%;
+  }
+  
+  .logo img {
+    max-width: 300px;
+  }
+  
+  .header__inner {
+    justify-content: space-between;
+  }
+
+  /* Переключаем видимость блоков */
+  .header__socials--desktop {
+    display: none !important;
+  }
+
+  .header__socials--mobile {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    margin-top: 30px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    max-width: 270px;
+  }
+  
+  .burger {
+    width: 42px;
+    height: 22px;
+  }
+  
+  .burger span:nth-child(2) { top: 9px; }
+  .burger span:nth-child(3) { top: 18px; }
+  
+  .burger--active span:nth-child(1) { top: 9px; }
+  .burger--active span:nth-child(3) { top: 9px; }
+}
