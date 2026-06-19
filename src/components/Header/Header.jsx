@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import "./Header.css"
 import logo from "../../assets/icons/logo.png"
 
@@ -17,7 +18,7 @@ function Header() {
     return () => { document.body.style.overflow = "" }
   }, [open])
 
-  // Выносим SVG в переменные, чтобы не дублировать код в разметке
+  // SVG-иконки для соцсетей
   const telegramIcon = (
     <svg viewBox="0 0 24 24" className="header__btn-svg">
       <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.62.15-.15 2.7-2.46 2.75-2.67.01-.03.01-.14-.06-.2-.07-.06-.17-.04-.25-.02-.11.02-1.83 1.16-5.16 3.42-.49.34-.93.51-1.33.5-.44-.01-1.29-.25-1.92-.45-.77-.25-1.39-.39-1.34-.83.03-.23.35-.46.97-.71 3.82-1.66 6.37-2.75 7.66-3.29 3.65-1.53 4.41-1.8 4.9-.18.1.2.11.43.11.66z"/>
@@ -35,15 +36,15 @@ function Header() {
       <div className="header__inner">
         
         {/* LOGO */}
-        <a href="/" className="logo" onClick={closeMenu}>
+        <Link to="/" className="logo" onClick={closeMenu}>
           <img src={logo} alt="logo" />
-        </a>
+        </Link>
 
         {/* DESKTOP NAV */}
         <nav className="nav">
-          <a href="/" className="nav__link">Главная</a>
-          <a href="/tours" className="nav__link">Туры</a>
-          <a href="/regions" className="nav__link">Регионы</a>
+          <Link to="/" className="nav__link">Главная</Link>
+          <Link to="/tours" className="nav__link">Туры</Link>
+          <Link to="/regions" className="nav__link">Регионы</Link>
         </nav>
 
         {/* SOCIAL BUTTONS (DESKTOP) */}
@@ -76,9 +77,9 @@ function Header() {
         {/* MOBILE SIDE MENU */}
         <div className={`sideMenu ${open ? "sideMenu--open" : ""}`}>
           <nav className="sideMenu__nav">
-            <a href="/" onClick={closeMenu}>Главная</a>
-            <a href="/tours" onClick={closeMenu}>Туры</a>
-            <a href="/regions" onClick={closeMenu}>Регионы</a>
+            <Link to="/" onClick={closeMenu}>Главная</Link>
+            <Link to="/tours" onClick={closeMenu}>Туры</Link>
+            <Link to="/regions" onClick={closeMenu}>Регионы</Link>
             
             {/* SOCIAL BUTTONS (MOBILE) */}
             <div className="header__socials header__socials--mobile">
