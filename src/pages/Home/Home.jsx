@@ -115,5 +115,5 @@ function Home() {
     </main>
   )
 }
-
+// Проверка подвзяки git
 export default Home
