@@ -1,6 +1,4 @@
-/* ==========================================================================
-   БАЗОВЫЕ НАСТРОЙКИ ФУТЕРА (По умолчанию Mobile-First)
-   ========================================================================== */
+
 .footer {
   --color-bg: #f8fafc;
   --color-text-main: #1f2937;
@@ -13,7 +11,7 @@
 
   background-color: var(--color-bg);
   color: var(--color-text-main);
-  /* Паддинг плавно уменьшается на мобильных и увеличивается на ПК */
+
   padding: clamp(40px, 6vw, 80px) 16px clamp(24px, 4vw, 32px);
   border-top: 1px solid #e2e8f0;
   font-family: system-ui, -apple-system, sans-serif;
@@ -21,18 +19,18 @@
   box-sizing: border-box;
 }
 
-/* СЕТКА КОНТЕЙНЕРА */
+
 .footer__container {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  /* На маленьких экранах — 1 колонка, контент идет сверху вниз */
+
   grid-template-columns: 1fr;
   gap: 40px;
   width: 100%;
 }
 
-/* ОБЩИЕ СТИЛИ ДЛЯ ТЕКСТА */
+
 .footer__title {
   font-size: clamp(17px, 2vw, 19px);
   font-weight: 600;
@@ -55,11 +53,7 @@
   margin: 0;
 }
 
-/* ==========================================================================
-   БЛОКИ И ЭЛЕМЕНТЫ КОНТЕНТА
-   ========================================================================== */
 
-/* Блок бренда */
 .footer__brand {
   display: flex;
   flex-direction: column;
@@ -70,7 +64,7 @@
   max-width: 460px;
 }
 
-/* Навигация */
+
 .footer__links {
   display: flex;
   flex-direction: column;
@@ -99,7 +93,7 @@
   color: var(--color-primary);
 }
 
-/* Контакты */
+
 .footer__contacts {
   display: flex;
   flex-direction: column;
@@ -134,13 +128,13 @@
   color: var(--color-primary);
 }
 
-/* Кнопки соцсетей */
+
 .footer__socials {
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  max-width: 320px; /* Ограничиваем растягивание кнопок на мобильных */
+  max-width: 320px; 
 }
 
 .footer__btn {
@@ -183,7 +177,7 @@
   box-shadow: 0 6px 20px rgba(18, 140, 126, 0.25);
 }
 
-/* Копирайт */
+
 .footer__bottom {
   text-align: center;
   margin-top: clamp(40px, 5vw, 60px);
@@ -195,24 +189,21 @@
 .footer__bottom p { margin: 0; }
 
 
-/* ==========================================================================
-   АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ (Переход на большие экраны)
-   ========================================================================== */
 
-/* ПЛАНШЕТЫ (От 600px до 950px) */
+
+
 @media (min-width: 600px) {
   .footer__container {
-    /* Переключаемся на двухколоночную сетку */
     grid-template-columns: 1fr 1fr;
     gap: 48px 32px;
   }
 
-  /* Бренд занимает всю верхнюю строку, становясь красивой шапкой */
+
   .footer__brand {
     grid-column: span 2;
   }
 
-  /* Ссылки и контакты выравниваются по левой стороне внутри своих ячеек */
+
   .footer__links,
   .footer__contacts {
     align-items: flex-start;
@@ -224,22 +215,22 @@
   }
 
   .footer__link:hover {
-    transform: translateX(4px); /* Добавляем элегантный сдвиг вправо на десктопе */
+    transform: translateX(4px);
   }
 
   .footer__socials {
-    max-width: 100%; /* Убираем ограничение ширины, так как они теперь в левой колонке */
-    flex-direction: row; /* Выстраиваем кнопки Telegram и WhatsApp в одну линию */
+    max-width: 100%;
+    flex-direction: row; 
     flex-wrap: wrap;
   }
 
   .footer__btn {
-    flex: 1; /* Кнопки делят пространство поровну */
+    flex: 1; 
     min-width: 140px;
   }
 }
 
-/* ДЕСКТОПЫ И НОУТБУКИ (От 950px и выше) */
+
 @media (min-width: 950px) {
   .footer {
     padding-left: 40px;
@@ -247,12 +238,11 @@
   }
 
   .footer__container {
-    /* Идеальные пропорции в 3 колонки: под бренд отдаем больше места */
     grid-template-columns: 2fr 1fr 1.3fr;
     gap: 40px;
   }
 
-  /* Возвращаем бренд в стандартный поток первой колонки */
+
   .footer__brand {
     grid-column: span 1;
     align-items: flex-start;
@@ -260,11 +250,11 @@
   }
 
   .footer__brand .footer__text {
-    max-width: 360px; /* Текст не растягивается слишком широко, сохраняя читаемость */
+    max-width: 360px; 
   }
 
   .footer__socials {
-    flex-direction: column; /* На ПК возвращаем кнопки мессенджеров в аккуратный стек друг под другом */
+    flex-direction: column; 
   }
   
   .footer__btn {
@@ -272,9 +262,9 @@
   }
 }
 
-/* УЛЬТРАШИРОКИЕ МОНИТОРЫ (От 1400px) */
+
 @media (min-width: 1400px) {
   .footer__container {
-    max-width: 1320px; /* Чуть шире контейнер, чтобы соответствовать широким хедерам */
+    max-width: 1320px; 
   }
 }

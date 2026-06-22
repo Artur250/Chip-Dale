@@ -8,7 +8,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer__container">
 
-        {/* Блок бренда */}
+
         <div className="footer__brand">
           <h2 className="footer__title footer__title--logo">Чип и Дейл</h2>
           <p className="footer__text">
@@ -17,7 +17,7 @@ function Footer() {
           </p>
         </div>
 
-        {/* Блок навигации */}
+
         <div className="footer__links">
           <h3 className="footer__title">Навигация</h3>
           <nav className="footer__nav" aria-label="Footer Navigation">
@@ -27,7 +27,7 @@ function Footer() {
           </nav>
         </div>
 
-        {/* Блок контактов */}
+
         <div className="footer__contacts">
           <h3 className="footer__title">Контакты</h3>
           <div className="footer__info">
@@ -36,11 +36,11 @@ function Footer() {
             </p>
             <p className="footer__info-item">
               <span className="footer__icon" aria-hidden="true">✉️</span> 
-              <a href="mailto:info@chipdale.kg" className="footer__info-link">info@chipdale.kg</a>
+              {/* <a href="mailto:info@chipdale.kg" className="footer__info-link">info@chipdale.kg</a> */}
             </p>
           </div>
           
-          {/* Соцсети / Мессенджеры */}
+
           <div className="footer__socials">
             <a
               href="https://t.me/+79818129745"
@@ -66,7 +66,7 @@ function Footer() {
 
       </div>
 
-      {/* Копирайт */}
+
       <div className="footer__bottom">
         <p>&copy; {currentYear} Чип и Дейл. Все права защищены.</p>
       </div>
