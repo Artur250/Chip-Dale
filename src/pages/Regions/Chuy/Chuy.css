@@ -1,10 +1,10 @@
-
 .region-detail {
-  font-family: system-ui, -apple-system, sans-serif;
-  color: #1f2937;
-  background: #f6f8fb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
   min-height: 100vh;
-  padding: 30px 16px clamp(60px, 8vw, 100px);
+  padding: 40px 20px clamp(60px, 8vw, 100px);
+  -webkit-font-smoothing: antialiased;
 }
 
 .region-detail__container {
@@ -12,9 +12,9 @@
   margin: 0 auto;
 }
 
-
+/* Навигация */
 .region-detail__nav-bar {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: flex-start;
 }
@@ -22,120 +22,138 @@
 .region-detail__back-btn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
-  color: #374151;
-  font-size: 18px; 
-  font-weight: 700; 
-  padding: 14px 28px; 
+  color: #475569;
+  font-size: 16px; 
+  font-weight: 600; 
+  padding: 12px 24px; 
   background: #ffffff;
-  border-radius: 14px; 
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  border-radius: 100px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
   border: 1px solid #e2e8f0;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .region-detail__back-svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
   transition: transform 0.25s ease;
 }
 
-
 .region-detail__back-btn:hover {
-  color: #16a34a;
-  border-color: rgba(22, 163, 74, 0.3);
-  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.1);
+  color: #0f766e;
+  border-color: rgba(15, 118, 110, 0.2);
+  box-shadow: 0 10px 15px -3px rgba(15, 118, 110, 0.05);
   transform: translateY(-2px);
 }
 
 .region-detail__back-btn:hover .region-detail__back-svg {
-  transform: translateX(-5px); 
+  transform: translateX(-4px); 
 }
 
-
+/* Главный широкоформатный баннер */
 .region-detail__header {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  margin-bottom: 50px;
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-  border: 1px solid #e2e8f0;
-}
-
-.region-detail__emblem-wrapper {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
-  padding: 8px;
-  border: 1px solid #f1f5f9;
+  text-align: center;
+  min-height: 380px; 
+  margin-bottom: 50px;
+  padding: 40px;
+  border-radius: 32px; 
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(15, 118, 110, 0.15);
+  
+  /* ЖЕСТКИЙ ФИКС ДЛЯ КАРТИНОК ЛЮБОГО РАЗМЕРА */
+  background-size: cover !important;       /* Картинка растягивается на весь блок без дублирования */
+  background-position: center !important;   /* Центрируем изображение строго посередине */
+  background-repeat: no-repeat !important;  /* Запрещаем картинке размножаться плиткой */
+  
+  /* Улучшенное сглаживание для маленьких картинок ggstatic */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
 }
 
-.region-detail__emblem {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+/* Затемняющий градиент поверх картинки */
+.region-detail__header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.65) 100%);
+  z-index: 1;
 }
 
+/* Стилизация заголовка поверх баннера */
 .region-detail__header h1 {
-  font-size: clamp(26px, 3.5vw, 38px);
-  color: #111827;
+  position: relative;
+  z-index: 2; /* Поднимаем над затемняющим градиентом */
+  font-size: clamp(32px, 5vw, 52px);
+  
+  /* ЖЕСТКИЙ ФИКС ЦВЕТА: перебиваем любые сторонние стили проекта */
+  color: #ffffff !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important; /* Плотная тень для максимальной читаемости */
+  
   font-weight: 800;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
-
+/* Секция туров */
 .region-detail__tours-section {
   width: 100%;
 }
 
 .region-detail__placeholder {
-  min-height: 300px;
+  min-height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px dashed #cbd5e1; 
   border-radius: 24px;
-  color: #64748b;
-  font-size: 18px;
+  color: #475569;
+  font-size: 17px;
+  font-weight: 500;
   text-align: center;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.5);
+  background: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
 }
 
 .region-detail__placeholder strong {
-  color: #16a34a;
+  color: #0f766e;
+  font-weight: 600;
 }
 
-
-@media (max-width: 640px) {
-  .region-detail__nav-bar {
-    margin-bottom: 24px;
+/* Адаптивность */
+@media (max-width: 768px) {
+  .region-detail {
+    padding: 24px 16px 60px;
   }
 
-  .region-detail__back-btn {
-    width: 100%; 
-    justify-content: center;
-    font-size: 16px;
-    padding: 12px 20px;
+  .region-detail__nav-bar {
+    margin-bottom: 20px;
   }
 
   .region-detail__header {
+    min-height: 260px;
     padding: 30px 20px;
+    border-radius: 24px;
+    margin-bottom: 35px;
   }
+}
 
-  .region-detail__emblem-wrapper {
-    width: 100px;
-    height: 100px;
+@media (max-width: 480px) {
+  .region-detail__back-btn {
+    width: 100%; 
+    justify-content: center;
   }
 }

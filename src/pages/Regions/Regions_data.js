@@ -1,39 +1,44 @@
- export const REGIONS_DATA = [
-    
+export const REGIONS_DATA = [
   {
     id: "chuy",
     name: "Чуйская область",
-    img: "https://www.heraldicum.ru/kyrgyz/images/chuj3.gif"
+    // Реальное фото: Древняя Башня Бурана на фоне Чуйской долины и Тянь-Шаня
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9MsDHAiVsxIDHNErZmCc_xaNueTAQwX4iKcUxGuTSdkOix1txnco0-ai&s=10"
   },
   {
     id: "issyk-kul",
     name: "Иссык-Кульская область",
-    img: "https://www.heraldicum.ru/kyrgyz/images/isykol1.gif"
+    // Реальное фото: Берег Иссык-Куля, синяя вода и горы Тянь-Шаня
+    img: "https://sun9-19.userapi.com/impg/U0tdZlHZXrbtyibNoB-atbDNmunab-4_QOdfOA/y8_lfIYgJaM.jpg?size=2560x1444&quality=95&sign=2d2cebd000d941856e87935a3e7a0f94&type=album"
   },
   {
     id: "jalal-abad",
     name: "Джалал-Абадская область",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Coat_of_arms_of_Jalal-Abad_region.png/250px-Coat_of_arms_of_Jalal-Abad_region.png"
+    // Реальное фото: Горные каньоны и зелень Джалал-Абада
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYMtGWXoZtUZRtRlFAAUJUFGH6tOHKLDBYJsBQuKJqio9SnPXX5F55hn0&s=10"
   },
   {
     id: "naryn",
     name: "Нарынская область",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Naryn_obl_coa.svg/250px-Naryn_obl_coa.svg.png"
+    // Реальное фото: Традиционная юрта на высокогорном джайлоо в Нарыне
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDwEzE3e5mwooxRWYcVDIsp9zHk9shM0zwgWyiFQFfg&s"
   },
   {
     id: "osh",
     name: "Ошская область",
-    img: "https://oshcity.gov.kg/wp-content/uploads/2023/12/gerb.png"
+    // Реальное фото: Панорама города Ош и священная гора Сулайман-Тоо
+    img: "https://www.baibol.kg/img/attraction_gallery/152413730621419.jpg"
   },
   {
     id: "talas",
     name: "Таласская область",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Coat_of_arms_of_Talas.svg/250px-Coat_of_arms_of_Talas.svg.png"
+    // Реальное фото: Горные хребты и перевалы Таласа
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ52Lm9gFASWNJd2JE-THAPektYhukQMx0YyaTuWqcEq3_dVnTekD36rKl&s=10"
   },
   {
     id: "batken",
     name: "Баткенская область",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Coat_of_arms_of_Batken_city.png/250px-Coat_of_arms_of_Batken_city.png "
+    // Реальное фото: Дикие каменистые ущелья и хребты Баткена
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJrKD88gHrnb1LRnQpYxenQY1yjsBaPWyM9FbTwaYwwoVheYsb3qzOaLo&s=10"
   }
-
-]
+];

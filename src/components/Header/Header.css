@@ -10,7 +10,7 @@
   z-index: 1000;
   background:
     linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
-    url("../../assets/images/backgroundlheader.png");
+    url("../../assets/images/backgroundheader.png");
   background-size: cover;
   background-position: center;
 }

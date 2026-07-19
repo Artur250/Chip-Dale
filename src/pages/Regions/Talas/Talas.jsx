@@ -10,10 +10,10 @@ function Talas() {
   }
 
   return (
-    <div className="region-detail">
+<div className="region-detail">
       <div className="region-detail__container">
         
-        {/* Крупная, заметная кнопка Возврата */}
+        {/* Кнопка Назад */}
         <div className="region-detail__nav-bar">
           <Link to="/regions" className="region-detail__back-btn">
             <svg className="region-detail__back-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,25 +23,18 @@ function Talas() {
           </Link>
         </div>
 
-        {/* Главная плашка области с гербом */}
-        <div className="region-detail__header">
-          <div className="region-detail__emblem-wrapper">
-            <img 
-              src={regionInfo.img} 
-              alt={`Герб ${regionInfo.name}`} 
-              className="region-detail__emblem" 
-            />
-          </div>
+        {/* Большой широкоформатный баннер с текстом внутри */}
+        <div 
+          className="region-detail__header" 
+          style={{ backgroundImage: `url(${regionInfo.img})` }}
+        >
           <h1>{regionInfo.name}</h1>
         </div>
 
-        {/* СЕКЦИЯ ДЛЯ ТУРОВ (Будущий функционал поиска и фильтрации) */}
+        {/* Секция туров */}
         <div className="region-detail__tours-section">
-          {/* Сюда в будущем встанет твой компонент поиска: <TourSearch regionId="talas" /> */}
-          
           <div className="region-detail__placeholder">
             <p>Здесь будут отображаться только туры по <strong>{regionInfo.name}</strong></p>
-            {/* Сюда позже отрендеришь массив отфильтрованных туров через .map() */}
           </div>
         </div>
 
