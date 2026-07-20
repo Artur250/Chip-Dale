@@ -1,16 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { HashRouter } from 'react-router-dom'
-import App from './App.jsx'
-import './index.css'
+import React from "react"
+import ReactDOM from "react-dom/client"
 
-import './i18n.js'
+import { HashRouter } from "react-router-dom"
+
+import App from "./App.jsx"
+
+import "./index.css"
+
+import "./i18n.js"
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
+
   <React.StrictMode>
+
     <HashRouter>
+
       <App />
+
     </HashRouter>
-  </React.StrictMode>,
+
+  </React.StrictMode>
+
 )

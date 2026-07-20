@@ -3,5 +3,92 @@
     "home": "Home",
     "tours": "Tours",
     "regions": "Regions"
+  },
+
+  "home": {
+
+    "aboutTitle": "Who are we?",
+
+    "aboutText": "The Chip and Dale team consists of enthusiasts and professional guides who love the untouched nature of Kyrgyzstan. We do not just organize trips, we open hidden gems of the Tien Shan mountains that ordinary tourists rarely reach.",
+
+    "servicesTitle": "Our services",
+
+    "services": {
+
+      "author": {
+        "title": "🏔 Custom tours",
+        "text": "We create unique routes from mountain passes to secluded lakes."
+      },
+
+      "expedition": {
+        "title": "🏕 Expeditions",
+        "text": "For those who want to explore wild nature deeper. We organize logistics, equipment and camping."
+      },
+
+      "guide": {
+        "title": "🚙 Support",
+        "text": "We provide safety and comfort throughout the journey."
+      }
+
+    },
+
+
+    "aboutDesc": "We believe mountains are a place of power. Our mission is to show you the real wild Kyrgyzstan and create memories that last a lifetime.",
+
+
+    "directions": "Our destinations",
+
+
+    "cards": {
+
+      "mountain": {
+        "title": "🏔 Mountain tours",
+        "text": "Travel through the most beautiful places of the country."
+      },
+
+      "fishing": {
+        "title": "🎣 Fishing",
+        "text": "Fishing trips and outdoor adventures."
+      },
+
+      "hunting": {
+        "title": "🦌 Hunting",
+        "text": "Prepared routes for hunting lovers."
+      },
+
+      "moto": {
+        "title": "🏍 Moto tours",
+        "text": "Motorcycle trips through scenic routes."
+      },
+
+      "rent": {
+        "title": "🛵 Motorcycle rental",
+        "text": "Equipment rental with guide support."
+      },
+
+      "individual": {
+        "title": "🏕 Individual tours",
+        "text": "Routes based on your wishes."
+      },
+
+      "horse": {
+        "title": "🐎 Horse riding",
+        "text": "Horse routes through mountains and valleys."
+      },
+
+      "yurt": {
+        "title": "⛺ Yurts and ethno tourism",
+        "text": "Living in yurts and discovering nomadic culture."
+      }
+
+    },
+
+
+    "heroTitle": "Discover Kyrgyzstan with us",
+
+    "heroText": "Mountains, lakes, fishing, hunting, moto tours and real adventures.",
+
+    "button": "View tours"
+
   }
 }
