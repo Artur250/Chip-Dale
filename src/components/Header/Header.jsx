@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
+
 import "./Header.css"
 import logo from "../../assets/icons/logo.png"
 
+
 function Header() {
+
   const [open, setOpen] = useState(false)
+  const { t, i18n } = useTranslation()
 
   const closeMenu = () => setOpen(false)
-
 
   useEffect(() => {
     if (open) {
@@ -15,9 +19,11 @@ function Header() {
     } else {
       document.body.style.overflow = ""
     }
-    return () => { document.body.style.overflow = "" }
-  }, [open])
 
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [open])
 
   const telegramIcon = (
     <svg viewBox="0 0 24 24" className="header__btn-svg">
@@ -31,64 +37,72 @@ function Header() {
     </svg>
   )
 
+
+  const languageSelect = (className) => (
+    <div className={`language ${className}`}>
+      <select
+        value={i18n.language}
+        onChange={(e) => i18n.changeLanguage(e.target.value)}
+      >
+        <option value="ru">🇷🇺</option>
+        <option value="en">🇺🇸</option>
+        <option value="ko">🇰🇷</option>
+      </select>
+    </div>
+  )
+
   return (
     <header className="header">
       <div className="header__inner">
-        
 
         <Link to="/" className="logo" onClick={closeMenu}>
           <img src={logo} alt="logo" />
         </Link>
 
-
         <nav className="nav">
-          <Link to="/" className="nav__link">Главная</Link>
-          <Link to="/tours" className="nav__link">Туры</Link>
-          <Link to="/regions" className="nav__link">Регионы</Link>
+          <Link to="/" className="nav__link">{t("header.home")}</Link>
+          <Link to="/tours" className="nav__link">{t("header.tours")}</Link>
+          <Link to="/regions" className="nav__link">{t("header.regions")}</Link>
         </nav>
 
 
+        {languageSelect("language--desktop")}
+
         <div className="header__socials header__socials--desktop">
-          <a href="https://t.me/+79818129745" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--telegram" aria-label="Telegram">
+          <a href="https://t.me/+79818129745" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--telegram">
             {telegramIcon}
           </a>
-          <a href="https://wa.me/996772112111" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--whatsapp" aria-label="WhatsApp">
+          <a href="https://wa.me/996772112111" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--whatsapp">
             {whatsappIcon}
           </a>
         </div>
 
-
-        <button
-          className={`burger ${open ? "burger--active" : ""}`}
-          onClick={() => setOpen(!open)}
-          aria-label="Открыть меню"
-        >
+        <button className={`burger ${open ? "burger--active" : ""}`} onClick={() => setOpen(!open)}>
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-
-        <div
-          className={`overlay ${open ? "overlay--show" : ""}`}
-          onClick={closeMenu}
-        />
-
+        <div className={`overlay ${open ? "overlay--show" : ""}`} onClick={closeMenu} />
 
         <div className={`sideMenu ${open ? "sideMenu--open" : ""}`}>
           <nav className="sideMenu__nav">
-            <Link to="/" onClick={closeMenu}>Главная</Link>
-            <Link to="/tours" onClick={closeMenu}>Туры</Link>
-            <Link to="/regions" onClick={closeMenu}>Регионы</Link>
-            
+            <Link to="/" onClick={closeMenu}>{t("header.home")}</Link>
+            <Link to="/tours" onClick={closeMenu}>{t("header.tours")}</Link>
+            <Link to="/regions" onClick={closeMenu}>{t("header.regions")}</Link>
 
-            <div className="header__socials header__socials--mobile">
-              <a href="https://t.me/+79818129745" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--telegram" aria-label="Telegram">
-                {telegramIcon}
-              </a>
-              <a href="https://wa.me/996772112111" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--whatsapp" aria-label="WhatsApp">
-                {whatsappIcon}
-              </a>
+
+            <div className="sideMenu__bottom">
+              {languageSelect("language--mobile")}
+              
+              <div className="header__socials header__socials--mobile">
+                <a href="https://t.me/+79818129745" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--telegram">
+                  {telegramIcon}
+                </a>
+                <a href="https://wa.me/996772112111" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--whatsapp">
+                  {whatsappIcon}
+                </a>
+              </div>
             </div>
           </nav>
         </div>
