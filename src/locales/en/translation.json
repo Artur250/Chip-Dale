@@ -4,7 +4,15 @@
     "tours": "Tours",
     "regions": "Regions"
   },
-
+  
+"footer": {
+  "logo": "Chip & Dale",
+  "description": "Tours around Kyrgyzstan — unforgettable journeys, majestic mountains, untouched nature and real adventures. Discover the heart of Central Asia.",
+  "navigation": "Navigation",
+  "contacts": "Contacts",
+  "address": "Bishkek, Kyrgyzstan",
+  "copyright": "Chip & Dale. All rights reserved."
+},
   "home": {
 
     "aboutTitle": "Who are we?",
@@ -90,5 +98,22 @@
 
     "button": "View tours"
 
-  }
+  },
+"regions": {
+  "title": "Regions of Kyrgyzstan",
+  "subtitle": "Choose a region to learn more about its tours and attractions.",
+  "more": "Learn more",
+
+  "chuy": "Chuy Region",
+  "issykKul": "Issyk-Kul Region",
+  "jalalAbad": "Jalal-Abad Region",
+  "naryn": "Naryn Region",
+  "osh": "Osh Region",
+  "talas": "Talas Region",
+  "batken": "Batken Region"
+},
+"region": {
+  "back": "Back to regions",
+  "tours": "Here will be displayed tours from"
+}
 }

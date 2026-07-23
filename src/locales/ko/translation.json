@@ -4,7 +4,15 @@
     "tours": "투어",
     "regions": "지역"
   },
-
+  
+  "footer": {
+  "logo": "칩 앤 데일",
+  "description": "키르기스스탄 여행. 웅장한 산맥, 아름다운 자연, 그리고 잊지 못할 모험을 경험해 보세요.",
+  "navigation": "메뉴",
+  "contacts": "연락처",
+  "address": "키르기스스탄 비슈케크",
+  "copyright": "칩과 데일. 모든 권리 보유."
+  },
   "home": {
 
     "aboutTitle": "우리는 누구인가요?",
@@ -139,5 +147,22 @@
 
     "button": "투어 보기"
 
-  }
+  },
+"regions": {
+  "title": "키르기스스탄의 지역",
+  "subtitle": "관심 있는 지역을 선택하여 관광지와 투어를 확인하세요.",
+  "more": "자세히 보기",
+
+  "chuy": "추이 주",
+  "issykKul": "이식쿨 주",
+  "jalalAbad": "잘랄아바드 주",
+  "naryn": "나린 주",
+  "osh": "오시 주",
+  "talas": "탈라스 주",
+  "batken": "바트켄 주"
+},
+"region": {
+  "back": "지역으로 돌아가기",
+  "tours": "이 지역의 투어가 표시됩니다"
+}
 }
