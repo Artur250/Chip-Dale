@@ -12,7 +12,6 @@
   margin: 0 auto;
 }
 
-/* Навигация */
 .region-detail__nav-bar {
   margin-bottom: 30px;
   display: flex;
@@ -25,9 +24,9 @@
   gap: 10px;
   text-decoration: none;
   color: #475569;
-  font-size: 16px; 
-  font-weight: 600; 
-  padding: 12px 24px; 
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
   background: #ffffff;
   border-radius: 100px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
@@ -52,10 +51,9 @@
 }
 
 .region-detail__back-btn:hover .region-detail__back-svg {
-  transform: translateX(-4px); 
+  transform: translateX(-4px);
 }
 
-/* Главный широкоформатный баннер */
 .region-detail__header {
   position: relative;
   display: flex;
@@ -63,24 +61,19 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 380px; 
+  min-height: 380px;
   margin-bottom: 50px;
   padding: 40px;
-  border-radius: 32px; 
+  border-radius: 32px;
   overflow: hidden;
   box-shadow: 0 10px 30px -10px rgba(15, 118, 110, 0.15);
-  
-  /* ЖЕСТКИЙ ФИКС ДЛЯ КАРТИНОК ЛЮБОГО РАЗМЕРА */
-  background-size: cover !important;       /* Картинка растягивается на весь блок без дублирования */
-  background-position: center !important;   /* Центрируем изображение строго посередине */
-  background-repeat: no-repeat !important;  /* Запрещаем картинке размножаться плиткой */
-  
-  /* Улучшенное сглаживание для маленьких картинок ggstatic */
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: auto;
 }
 
-/* Затемняющий градиент поверх картинки */
 .region-detail__header::before {
   content: "";
   position: absolute;
@@ -92,22 +85,17 @@
   z-index: 1;
 }
 
-/* Стилизация заголовка поверх баннера */
 .region-detail__header h1 {
   position: relative;
-  z-index: 2; /* Поднимаем над затемняющим градиентом */
+  z-index: 2;
   font-size: clamp(32px, 5vw, 52px);
-  
-  /* ЖЕСТКИЙ ФИКС ЦВЕТА: перебиваем любые сторонние стили проекта */
   color: #ffffff !important;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important; /* Плотная тень для максимальной читаемости */
-  
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important;
   font-weight: 800;
   letter-spacing: -0.02em;
   margin: 0;
 }
 
-/* Секция туров */
 .region-detail__tours-section {
   width: 100%;
 }
@@ -117,7 +105,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px dashed #cbd5e1; 
+  border: 2px dashed #cbd5e1;
   border-radius: 24px;
   color: #475569;
   font-size: 17px;
@@ -133,7 +121,6 @@
   font-weight: 600;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
   .region-detail {
     padding: 24px 16px 60px;
@@ -153,7 +140,7 @@
 
 @media (max-width: 480px) {
   .region-detail__back-btn {
-    width: 100%; 
+    width: 100%;
     justify-content: center;
   }
 }
