@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "key": "tour1",
+    "regions": ["chuy", "issykKul"]
+  },
+  {
+    "id": 2,
+    "key": "tour2",
+    "regions": ["chuy", "issykKul"]
+  },
+  {
+    "id": 3,
+    "key": "tour3",
+    "regions": ["chuy", "osh"]
+  },
+  {
+    "id": 4,
+    "key": "tour4",
+    "regions": ["chuy", "talas"]
+  },
+  {
+    "id": 5,
+    "key": "tour5",
+    "regions": ["chuy", "issykKul", "naryn"]
+  }
+]

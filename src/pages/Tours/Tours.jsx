@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import "./Tours.css"
 
-import { TOUR_DATA } from "../../data/tours"
+import toursData from "../../data/toursData.json"
 import { TOURS_IMAGES } from "./toursImgData"
 
 function Tours() {
@@ -12,44 +12,38 @@ function Tours() {
   const [selectedImage, setSelectedImage] = useState(null)
   const [selectedTour, setSelectedTour] = useState(null)
 
-  // Блокировка скролла страницы при открытых модалках + закрытие по Esc
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setSelectedImage(null)
-        setSelectedTour(null)
-      }
-    }
-
-    if (selectedImage || selectedTour) {
-      document.body.style.overflow = "hidden"
-      window.addEventListener("keydown", handleKeyDown)
-    } else {
-      document.body.style.overflow = "unset"
-    }
-
-    return () => {
-      document.body.style.overflow = "unset"
-      window.removeEventListener("keydown", handleKeyDown)
-    }
-  }, [selectedImage, selectedTour])
-
-  const filteredTours = TOUR_DATA.filter((tour) => {
+  // Поиск по заголовку, региону и описанию
+  const filteredTours = toursData.filter((tour) => {
     const value = search.toLowerCase().trim()
-    return (
-      t(tour.title).toLowerCase().includes(value) ||
-      t(tour.region).toLowerCase().includes(value) ||
-      t(tour.description).toLowerCase().includes(value)
-    )
+    const title = t(`tours.${tour.key}.title`).toLowerCase()
+    const region = t(`tours.${tour.key}.region`).toLowerCase()
+    const description = t(`tours.${tour.key}.description`).toLowerCase()
+
+    return title.includes(value) || region.includes(value) || description.includes(value)
   })
+
+  // Безопасное извлечение программы текущего тура (работает и с объектом, и с массивом)
+  const getProgramList = () => {
+    if (!selectedTour) return []
+    const programData = t(`tours.${selectedTour.key}.program`, { returnObjects: true })
+    if (Array.isArray(programData)) return programData
+    if (typeof programData === "object" && programData !== null) {
+      return Object.values(programData)
+    }
+    return []
+  }
+
+  const programList = getProgramList()
 
   return (
     <main className="tours-page">
+      {/* Hero-секция */}
       <section className="tours-hero">
         <h1>{t("tours.hero.title")}</h1>
         <p>{t("tours.hero.description")}</p>
       </section>
 
+      {/* Поиск и туры */}
       <section className="tours-container">
         <div className="tour-search">
           <input
@@ -64,15 +58,17 @@ function Tours() {
           {filteredTours.length > 0 ? (
             filteredTours.map((tour) => (
               <article className="tour-card" key={tour.id}>
-                <h2>{t(tour.title)}</h2>
-                <p className="tour-card__description">{t(tour.description)}</p>
+                <h2>{t(`tours.${tour.key}.title`)}</h2>
+                <p className="tour-card__description">
+                  {t(`tours.${tour.key}.description`)}
+                </p>
 
                 <div className="tour-card__info">
-                  <span>📍 {t(tour.region)}</span>
-                  <span>⏳ {t(tour.duration)}</span>
-                  <span>☀️ {t(tour.season)}</span>
-                  <span>⚡ {t(tour.difficulty)}</span>
-                  <span>💰 {t(tour.price)}</span>
+                  <span>📍 {t(`tours.${tour.key}.region`)}</span>
+                  <span>⏳ {t(`tours.${tour.key}.duration`)}</span>
+                  <span>☀️ {t(`tours.${tour.key}.season`)}</span>
+                  <span>⚡ {t(`tours.${tour.key}.difficulty`)}</span>
+                  <span>💰 {t(`tours.${tour.key}.price`)}</span>
                 </div>
 
                 <button
@@ -89,6 +85,7 @@ function Tours() {
         </div>
       </section>
 
+      {/* Галерея */}
       <section className="gallery-section">
         <h2 className="gallery-title">{t("tours.gallery.title")}</h2>
         <p className="gallery-description">{t("tours.gallery.description")}</p>
@@ -98,7 +95,7 @@ function Tours() {
             <div key={photo.id} className="gallery-card">
               <img
                 src={photo.image}
-                alt={photo.title || "Tour gallery photo"}
+                alt={photo.title || "Tour photo"}
                 className="gallery-image"
                 loading="lazy"
                 decoding="async"
@@ -109,7 +106,7 @@ function Tours() {
         </div>
       </section>
 
-      {/* Модальное окно с картинкой */}
+      {/* Модальное окно с фото */}
       {selectedImage && (
         <div className="image-modal" onClick={() => setSelectedImage(null)}>
           <img
@@ -118,11 +115,7 @@ function Tours() {
             className="image-modal__img"
             onClick={(e) => e.stopPropagation()}
           />
-          <button
-            className="image-modal__close"
-            onClick={() => setSelectedImage(null)}
-            aria-label="Close modal"
-          >
+          <button className="image-modal__close" onClick={() => setSelectedImage(null)}>
             ✕
           </button>
         </div>
@@ -131,36 +124,29 @@ function Tours() {
       {/* Модальное окно тура */}
       {selectedTour && (
         <div className="tour-modal" onClick={() => setSelectedTour(null)}>
-          <div
-            className="tour-modal__content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="tour-modal__close"
-              onClick={() => setSelectedTour(null)}
-              aria-label="Close modal"
-            >
+          <div className="tour-modal__content" onClick={(e) => e.stopPropagation()}>
+            <button className="tour-modal__close" onClick={() => setSelectedTour(null)}>
               ✕
             </button>
 
-            <h2>{t(selectedTour.title)}</h2>
-            <p>{t(selectedTour.fullDescription)}</p>
+            <h2>{t(`tours.${selectedTour.key}.title`)}</h2>
+            <p>{t(`tours.${selectedTour.key}.fullDescription`)}</p>
 
             <div className="tour-modal__info">
-              <span>⏳ {t(selectedTour.duration)}</span>
-              <span>☀️ {t(selectedTour.season)}</span>
-              <span>⚡ {t(selectedTour.difficulty)}</span>
-              <span>💰 {t(selectedTour.price)}</span>
+              <span>⏳ {t(`tours.${selectedTour.key}.duration`)}</span>
+              <span>☀️ {t(`tours.${selectedTour.key}.season`)}</span>
+              <span>⚡ {t(`tours.${selectedTour.key}.difficulty`)}</span>
+              <span>💰 {t(`tours.${selectedTour.key}.price`)}</span>
             </div>
 
             <h3 className="tour-modal__program-title">{t("tours.program")}</h3>
 
-            {selectedTour.program?.map((day, index) => (
+            {programList.map((item, index) => (
               <div key={index} className="tour-day">
                 <h4>
-                  {t(day.day)}: {t(day.title)}
+                  {item.day}: {item.title}
                 </h4>
-                <p>{t(day.text)}</p>
+                <p>{item.text}</p>
               </div>
             ))}
           </div>
