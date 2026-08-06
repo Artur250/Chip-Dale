@@ -1,18 +1,81 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 
 import "./Header.css"
 import logo from "../../assets/icons/logo.png"
 
+const FLAGS = {
+  ru: "https://flagcdn.com/w80/ru.png",
+  en: "https://flagcdn.com/w80/us.png",
+  ko: "https://flagcdn.com/w80/kr.png"
+}
+
+// Отдельный автономный компонент для селектора языков
+function LanguageSelector({ className = "" }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const { i18n } = useTranslation()
+  const dropdownRef = useRef(null)
+
+  const currentLang = i18n.language || "ru"
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  const handleLangChange = (lang) => {
+    i18n.changeLanguage(lang)
+    setIsOpen(false)
+  }
+
+  return (
+    <div className={`custom-lang ${className}`} ref={dropdownRef}>
+      <button
+        type="button"
+        className="custom-lang__btn"
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-label="Change language"
+      >
+        <img
+          src={FLAGS[currentLang] || FLAGS.ru}
+          alt={currentLang}
+          className="custom-lang__flag"
+        />
+      </button>
+
+      {isOpen && (
+        <div className="custom-lang__dropdown">
+          {Object.keys(FLAGS).map((lang) => (
+            <button
+              key={lang}
+              type="button"
+              className={`custom-lang__item ${currentLang === lang ? "active" : ""}`}
+              onClick={() => handleLangChange(lang)}
+            >
+              <img src={FLAGS[lang]} alt={lang} className="custom-lang__flag" />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 function Header() {
-
   const [open, setOpen] = useState(false)
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
-  const closeMenu = () => setOpen(false)
+  const closeMenu = () => {
+    setOpen(false)
+  }
 
+  // Блокировка скролла при открытии сайдбара
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden"
@@ -37,24 +100,9 @@ function Header() {
     </svg>
   )
 
-
-  const languageSelect = (className) => (
-    <div className={`language ${className}`}>
-      <select
-        value={i18n.language}
-        onChange={(e) => i18n.changeLanguage(e.target.value)}
-      >
-        <option value="ru">🇷🇺</option>
-        <option value="en">🇺🇸</option>
-        <option value="ko">🇰🇷</option>
-      </select>
-    </div>
-  )
-
   return (
     <header className="header">
       <div className="header__inner">
-
         <Link to="/" className="logo" onClick={closeMenu}>
           <img src={logo} alt="logo" />
         </Link>
@@ -65,8 +113,7 @@ function Header() {
           <Link to="/regions" className="nav__link">{t("header.regions")}</Link>
         </nav>
 
-
-        {languageSelect("language--desktop")}
+        <LanguageSelector className="language--desktop" />
 
         <div className="header__socials header__socials--desktop">
           <a href="https://t.me/+79818129745" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--telegram">
@@ -91,9 +138,8 @@ function Header() {
             <Link to="/tours" onClick={closeMenu}>{t("header.tours")}</Link>
             <Link to="/regions" onClick={closeMenu}>{t("header.regions")}</Link>
 
-
             <div className="sideMenu__bottom">
-              {languageSelect("language--mobile")}
+              <LanguageSelector className="language--mobile" />
               
               <div className="header__socials header__socials--mobile">
                 <a href="https://t.me/+79818129745" target="_blank" rel="noopener noreferrer" className="header__btn-circle header__btn-circle--telegram">
@@ -106,7 +152,6 @@ function Header() {
             </div>
           </nav>
         </div>
-
       </div>
     </header>
   )
