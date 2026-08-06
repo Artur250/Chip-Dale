@@ -28,7 +28,7 @@
   position: relative;
 }
 
-/* LOGO */
+
 .logo {
   display: block;
   z-index: 1010;
@@ -42,7 +42,7 @@
   display: block;
 }
 
-/* NAV */
+
 .nav {
   display: flex;
   gap: 60px;

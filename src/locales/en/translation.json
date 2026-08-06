@@ -4,116 +4,320 @@
     "tours": "Tours",
     "regions": "Regions"
   },
-  
-"footer": {
-  "logo": "Chip & Dale",
-  "description": "Tours around Kyrgyzstan — unforgettable journeys, majestic mountains, untouched nature and real adventures. Discover the heart of Central Asia.",
-  "navigation": "Navigation",
-  "contacts": "Contacts",
-  "address": "Bishkek, Kyrgyzstan",
-  "copyright": "Chip & Dale. All rights reserved."
-},
+  "footer": {
+    "logo": "Chip & Dale",
+    "description": "Tours around Kyrgyzstan — unforgettable journeys, majestic mountains, untouched nature and real adventures. Discover the heart of Central Asia.",
+    "navigation": "Navigation",
+    "contacts": "Contacts",
+    "address": "Bishkek, Kyrgyzstan",
+    "copyright": "Chip & Dale. All rights reserved."
+  },
   "home": {
-
     "aboutTitle": "Who are we?",
-
     "aboutText": "The Chip and Dale team consists of enthusiasts and professional guides who love the untouched nature of Kyrgyzstan. We do not just organize trips, we open hidden gems of the Tien Shan mountains that ordinary tourists rarely reach.",
-
     "servicesTitle": "Our services",
-
     "services": {
-
       "author": {
         "title": "🏔 Custom tours",
         "text": "We create unique routes from mountain passes to secluded lakes."
       },
-
       "expedition": {
         "title": "🏕 Expeditions",
         "text": "For those who want to explore wild nature deeper. We organize logistics, equipment and camping."
       },
-
       "guide": {
         "title": "🚙 Support",
         "text": "We provide safety and comfort throughout the journey."
       }
-
     },
-
-
     "aboutDesc": "We believe mountains are a place of power. Our mission is to show you the real wild Kyrgyzstan and create memories that last a lifetime.",
-
-
     "directions": "Our destinations",
-
-
     "cards": {
-
       "mountain": {
         "title": "🏔 Mountain tours",
         "text": "Travel through the most beautiful places of the country."
       },
-
       "fishing": {
         "title": "🎣 Fishing",
         "text": "Fishing trips and outdoor adventures."
       },
-
       "hunting": {
         "title": "🦌 Hunting",
         "text": "Prepared routes for hunting lovers."
       },
-
       "moto": {
         "title": "🏍 Moto tours",
         "text": "Motorcycle trips through scenic routes."
       },
-
       "rent": {
         "title": "🛵 Motorcycle rental",
         "text": "Equipment rental with guide support."
       },
-
       "individual": {
         "title": "🏕 Individual tours",
         "text": "Routes based on your wishes."
       },
-
       "horse": {
         "title": "🐎 Horse riding",
         "text": "Horse routes through mountains and valleys."
       },
-
       "yurt": {
         "title": "⛺ Yurts and ethno tourism",
         "text": "Living in yurts and discovering nomadic culture."
       }
-
     },
-
-
     "heroTitle": "Discover Kyrgyzstan with us",
-
     "heroText": "Mountains, lakes, fishing, hunting, moto tours and real adventures.",
-
     "button": "View tours"
-
   },
-"regions": {
-  "title": "Regions of Kyrgyzstan",
-  "subtitle": "Choose a region to learn more about its tours and attractions.",
-  "more": "Learn more",
-
-  "chuy": "Chuy Region",
-  "issykKul": "Issyk-Kul Region",
-  "jalalAbad": "Jalal-Abad Region",
-  "naryn": "Naryn Region",
-  "osh": "Osh Region",
-  "talas": "Talas Region",
-  "batken": "Batken Region"
+  "regions": {
+    "title": "Regions of Kyrgyzstan",
+    "subtitle": "Choose a region to learn more about its tours and attractions.",
+    "more": "Learn more",
+    "chuy": "Chuy Region",
+    "issykKul": "Issyk-Kul Region",
+    "jalalAbad": "Jalal-Abad Region",
+    "naryn": "Naryn Region",
+    "osh": "Osh Region",
+    "talas": "Talas Region",
+    "batken": "Batken Region"
+  },
+  "region": {
+    "back": "Back to regions",
+    "tours": "Here will be displayed tours from"
+  },
+  "tours": {
+    "hero": {
+      "title": "Our Tours",
+      "description": "Discover Kyrgyzstan with us. Mountains, lakes, nature and unforgettable adventures."
+    },
+    "search": "🔎 Search tour...",
+    "more": "Learn more",
+    "notFound": "No tours found",
+    "program": "Tour Program",
+    "gallery": {
+      "title": "Photos from our tours",
+      "description": "A few photos from our journeys across Kyrgyzstan."
+    },
+    "tour1": {
+      "title": "In the Heart of Tien Shan: Mountains, Lakes, and Adventures",
+      "description": "This tour is designed for lovers of nature, active recreation, and real mountain adventures. Majestic Tien Shan peaks, picturesque gorges, crystal-clear alpine lakes, hot springs, and the unique atmosphere of Kyrgyz nature await you.",
+      "region": "Kyrgyzstan",
+      "duration": "8 days / 7 nights",
+      "season": "May — October",
+      "difficulty": "Easy / Moderate",
+      "price": "$500",
+      "fullDescription": "The route combines light hikes along mountain trails, relaxation amidst alpine landscapes, immersive local culture experiences, and opportunities to capture unforgettable photos.",
+      "program": {
+        "day1": {
+          "day": "Day 1",
+          "title": "Arrival in Bishkek",
+          "text": "Airport meetup, hotel transfer, team introduction, and a city walking tour."
+        },
+        "day2": {
+          "day": "Day 2",
+          "title": "Ala-Archa Gorge",
+          "text": "Hike to the waterfall or alpine camp surrounded by majestic coniferous forests and mountain peaks."
+        },
+        "day3": {
+          "day": "Day 3",
+          "title": "Transfer to Lake Issyk-Kul",
+          "text": "Scenic drive through Boom Gorge, visit to Burana Tower, and evening by the lake."
+        },
+        "day4": {
+          "day": "Day 4",
+          "title": "Grigorievskoye and Semenovskoye Gorges",
+          "text": "Off-road driving and light trekking to high-altitude lakes, horse riding available."
+        },
+        "day5": {
+          "day": "Day 5",
+          "title": "Karakol and Altyn-Arashan Hot Springs",
+          "text": "Karakol city sightseeing and ascent to natural thermal hot springs."
+        },
+        "day6": {
+          "day": "Day 6",
+          "title": "Skazka (Fairy Tale) Canyon & Barskoon Gorge",
+          "text": "Photoshoot among red sandstone formations and towering waterfalls."
+        },
+        "day7": {
+          "day": "Day 7",
+          "title": "Return to Bishkek via Bokonbaevo",
+          "text": "Eagle hunting demonstration with traditional eagle hunters and overnight in a yurt camp."
+        }
+      }
+    },
+    "tour2": {
+      "title": "Bishkek – Issyk-Kul",
+      "description": "A 6-day journey through the main highlights of Kyrgyzstan: Bishkek, Burana Tower, Lake Issyk-Kul, Karakol, Jeti-Oguz Gorge, and Ala-Archa National Park.",
+      "region": "Chuy and Issyk-Kul Regions",
+      "duration": "6 days / 5 nights",
+      "season": "May — October",
+      "difficulty": "Easy",
+      "price": "$350",
+      "fullDescription": "This tour is perfect for travelers who want to experience the culture, history, and nature of Kyrgyzstan.\n\nYou will visit the capital Bishkek, the ancient 11th-century Burana Tower from the Silk Road era, the famous Lake Issyk-Kul, Karakol city, historical landmarks, and one of the country's most beautiful gorges — Jeti-Oguz.\n\nThe itinerary blends lakeside relaxation, cultural discovery of Kyrgyzstan's diverse peoples, Tian Shan mountain scenery, and nature walks.",
+      "program": {
+        "day1": {
+          "day": "Day 1",
+          "title": "Bishkek — Discovering the Capital",
+          "text": "Airport meeting and hotel check-in. Bishkek city tour: Ala-Too Square, National Historical Museum, Oak Park, Victory Square, and Osh Bazaar. Traditional national dinner in the evening."
+        },
+        "day2": {
+          "day": "Day 2",
+          "title": "Burana Tower — Issyk-Kul",
+          "text": "After breakfast, visit Burana Tower, an 11th-century Silk Road monument. Following the excursion, transfer to Lake Issyk-Kul and hotel check-in."
+        },
+        "day3": {
+          "day": "Day 3",
+          "title": "Issyk-Kul — Cholpon-Ata",
+          "text": "Relax on the shores of Lake Issyk-Kul. Visit the open-air Petroglyph Museum, Ruh Ordo Cultural Center, and enjoy a waterfront walk. Boat ride and summer swimming options available."
+        },
+        "day4": {
+          "day": "Day 4",
+          "title": "Karakol — Jeti-Oguz",
+          "text": "Karakol city tour: Holy Trinity Orthodox Cathedral, Dungan Mosque, and Historical Museum. Drive to Jeti-Oguz Gorge: famous Seven Bulls rocks, Red Rocks, nature walks, and photoshoots in the Tian Shan mountains."
+        },
+        "day5": {
+          "day": "Day 5",
+          "title": "Return to Bishkek",
+          "text": "Return drive to Bishkek through scenic spots of the Issyk-Kul region. Free time and a farewell dinner at a national restaurant."
+        },
+        "day6": {
+          "day": "Day 6",
+          "title": "Ala-Archa National Park — Departure",
+          "text": "After breakfast, trip to Ala-Archa National Park. Walk among coniferous forests, mountain rivers, and alpine meadows. Light trekking option available. Airport transfer following the excursion."
+        }
+      }
+    },
+    "tour3": {
+  "title": "Two Capitals of Kyrgyzstan: Bishkek – Ala-Archa – Osh",
+  "description": "A 5-day journey through the two main cultural hubs of Kyrgyzstan: modern Bishkek, Ala-Archa National Park, ancient Osh, Sulaiman-Too, and Silk Road heritage.",
+  "region": "Chuy and Osh Regions",
+  "duration": "5 days / 4 nights",
+  "season": "May — October",
+  "difficulty": "Easy",
+  "price": "$450",
+  "fullDescription": "Discover the two most vibrant regions of Kyrgyzstan — modern Bishkek and ancient Osh.\n\nThis tour seamlessly combines nature, history, culture, and rich local traditions.\n\nYou will marvel at the majestic Tian Shan mountains, visit Ala-Archa National Park, and immerse yourself in the authentic atmosphere of Osh, one of Central Asia's oldest cities.\n\nThe itinerary highlights natural wonders, historical monuments, local cuisine, and genuine Kyrgyz hospitality.",
+  "program": {
+    "day1": {
+      "day": "Day 1",
+      "title": "Arrival in Bishkek — Ala-Archa",
+      "text": "Meetup at Manas International Airport and hotel transfer. Bishkek city tour: Ala-Too Square, State Historical Museum, Oak Park, Victory Square, Kyrgyz National Philharmonic, and Osh Bazaar. Followed by a drive to Ala-Archa National Park for mountain trail walks, panoramic views of Tian Shan peaks, rivers, and pine forests."
+    },
+    "day2": {
+      "day": "Day 2",
+      "title": "Flight Bishkek — Osh",
+      "text": "After breakfast, airport transfer for a domestic flight to Osh. Hotel check-in upon arrival followed by a city tour: sacred Sulaiman-Too Mountain, cave museum, observation deck, central square, and Ak-Buura riverfront."
+    },
+    "day3": {
+      "day": "Day 3",
+      "title": "History and Traditions of Osh Region",
+      "text": "Day trip to the ancient town of Uzgen. Visit the 11th-century Uzgen Minaret, Karakhanid Mausoleums, and local historical museum. Discover Silk Road heritage, taste famous Uzgen plov, and visit a craft center and local farm."
+    },
+    "day4": {
+      "day": "Day 4",
+      "title": "Nature and Culture of Southern Kyrgyzstan",
+      "text": "Visit scenic mountain areas of Osh region. Valley walks, immersive experience in a traditional Kyrgyz village, nomadic culture, and local food. Optional horseback riding, folk music performance, and traditional costume photoshoot."
+    },
+    "day5": {
+      "day": "Day 5",
+      "title": "Osh — Departure",
+      "text": "Free time after breakfast for souvenir shopping and visiting the oriental bazaar. Transfer to Osh International Airport."
+    }
+  }
 },
-"region": {
-  "back": "Back to regions",
-  "tours": "Here will be displayed tours from"
+"tour4": {
+  "title": "In the Footsteps of the Silk Road: Bishkek – Suusamyr – Talas",
+  "description": "A journey to the Talas Valley — a hub of the Great Silk Road, epic legends of Manas, and unique Tian Shan nature. Experience jailoo pastures, nomadic culture, history, and stunning mountain landscapes.",
+  "region": "Chuy and Talas Regions",
+  "duration": "4 days / 3 nights",
+  "season": "May — October",
+  "difficulty": "Easy",
+  "price": "Upon request",
+  "fullDescription": "Discover a hidden gem of Kyrgyzstan — the scenic Talas Valley.\n\nThis route intertwines the rich history of the Silk Road, heroic legends of the Epic of Manas, and breathtaking Tian Shan landscapes.\n\nYou will witness authentic Kyrgyz jailoo pastures, experience nomadic heritage, explore ancient historic sites, and enjoy the pristine beauty of Kyrgyzstan's high mountain regions.",
+  "program": {
+    "day1": {
+      "day": "Day 1",
+      "title": "Bishkek — Suusamyr Valley — Talas",
+      "text": "Morning departure from Bishkek. Drive through the Suusamyr Valley, one of Kyrgyzstan's most scenic high-altitude plateaus. See lush green jailoo pastures, herds of horses and sheep, roaring mountain rivers, and snow-capped peaks. Stop at the Too-Ashuu Pass for panoramic mountain ridge views. Traditional lunch en route before continuing to Talas Valley. Hotel check-in and evening city walk."
+    },
+    "day2": {
+      "day": "Day 2",
+      "title": "Talas — History of the Great Silk Road",
+      "text": "Excursion starts at the Manas Ordo memorial complex. Visit the Epic of Manas museum and learn about Manaschi storytellers and Kyrgyz traditions. Continue to the site of the famous Battle of Talas (751 AD), a pivotal Silk Road event. Learn about the role of the Talas Valley in Central Asian history and explore the ancient city area of Atlakh."
+    },
+    "day3": {
+      "day": "Day 3",
+      "title": "Talas Nature — Besh-Tash National Park",
+      "text": "After breakfast, trip to Besh-Tash National Park. Enjoy a hike through the mountain gorge, visit Lake Besh-Tash, relax amidst alpine meadows, and marvel at the Talas Ala-Too range. Optional activities: horseback riding, meeting local shepherds, tasting fresh kymyz (fermented mare's milk) and local products."
+    },
+    "day4": {
+      "day": "Day 4",
+      "title": "Talas — Bishkek",
+      "text": "After breakfast, return journey to Bishkek. Photo stops along the way, visits to local markets with opportunities to buy natural Talas honey, kurut, and traditional handcrafted souvenirs. Evening arrival in Bishkek."
+    }
+  }
+},
+"tour5": {
+  "title": "Classic Tour of Kyrgyzstan: Bishkek – Issyk-Kul – Son-Kul",
+  "description": "A 10-day expedition through three regions of Kyrgyzstan: Chuy, Issyk-Kul, and Naryn. Experience the Tian Shan nature, Lakes Issyk-Kul and Son-Kul, nomadic lifestyle, and traditional yurts.",
+  "region": "Chuy, Issyk-Kul, and Naryn Regions",
+  "duration": "10 days / 9 nights",
+  "season": "June — October",
+  "difficulty": "Easy",
+  "price": "Upon request",
+  "fullDescription": "This classic itinerary covers three major regions of Kyrgyzstan: Chuy, Issyk-Kul, and Naryn.\n\nThroughout the journey, you will discover the rich cultural heritage of the Kyrgyz people, authentic nomadic life, and untouched Tian Shan nature.\n\nThe route encompasses Bishkek, Ala-Archa National Park, the historical Burana Tower, Lake Issyk-Kul, Karakol gorges, high-altitude Lake Son-Kul, and an overnight stay in a traditional yurt camp.\n\nThis is the ultimate grand tour for first-time visitors to Kyrgyzstan.",
+  "program": {
+    "day1": {
+      "day": "Day 1",
+      "title": "Manas Airport — Bishkek — Ala-Archa",
+      "text": "Meetup at Manas International Airport. Transfer to Bishkek, breakfast, and hotel check-in. After rest, drive to Ala-Archa National Park for a gorge hike, mountain river scenery, and Tian Shan nature views. Return to Bishkek."
+    },
+    "day2": {
+      "day": "Day 2",
+      "title": "Bishkek — Burana Tower — Cholpon-Ata",
+      "text": "Drive to Lake Issyk-Kul via mountain routes. Visit the 10th–11th century Burana Tower historical complex, remnant of ancient Balasagun. Travel through Boom Gorge to Cholpon-Ata open-air petroglyph museum. Lakeside hotel check-in."
+    },
+    "day3": {
+      "day": "Day 3",
+      "title": "Cholpon-Ata — Grigorievskoye Gorge — Karakol",
+      "text": "Excursion to Grigorievskoye Gorge on the northern shore of Issyk-Kul. See alpine lakes, pastures, pristine nature, and traditional nomad camps. Optional hike to upper lakes followed by transfer to Karakol."
+    },
+    "day4": {
+      "day": "Day 4",
+      "title": "Karakol — Altyn-Arashan",
+      "text": "Trip to Altyn-Arashan gorge, famous for natural hot mineral springs and alpine views. 4x4 mountain drive, relaxation, and thermal hot spring bathing. Return to Karakol for the night."
+    },
+    "day5": {
+      "day": "Day 5",
+      "title": "Karakol — Jeti-Oguz — Tamga",
+      "text": "Visit Jeti-Oguz Gorge to see Seven Bulls red rock formations and Broken Heart rock. Enjoy mountain walks before driving along the southern shore of Issyk-Kul to Tamga village."
+    },
+    "day6": {
+      "day": "Day 6",
+      "title": "Barskoon — Arabel Pass — Skazka Canyon",
+      "text": "Barskoon Gorge tour featuring waterfalls and the Yuri Gagarin monument. Ascend Arabel Pass (~3800m high plateau). On the way back, explore Skazka (Fairy Tale) Canyon's multi-colored red rock formations."
+    },
+    "day7": {
+      "day": "Day 7",
+      "title": "Tamga — Kochkor — Lake Son-Kul",
+      "text": "Travel to high-altitude Lake Son-Kul via Kochkor village. Visit a traditional felt craft workshop, learn about Kyrgyz handicrafts, and enjoy lunch with a local family. Continue to Son-Kul and check into a traditional yurt camp."
+    },
+    "day8": {
+      "day": "Day 8",
+      "title": "Lake Son-Kul — Nomadic Life",
+      "text": "Leisure day on the shores of Lake Son-Kul. Experience Kyrgyz nomadic traditions, visit local yurts, see high pastures, and learn about local customs. Optional horseback riding or light mountain trekking."
+    },
+    "day9": {
+      "day": "Day 9",
+      "title": "Son-Kul — Bishkek",
+      "text": "Drive back to Bishkek over Teskei-Torpok and Dolon passes. En route, view Orto-Tokoy reservoir and travel back through Boom Gorge. Farewell dinner in Bishkek in the evening."
+    },
+    "day10": {
+      "day": "Day 10",
+      "title": "Bishkek — Manas Airport",
+      "text": "After breakfast, transfer to Manas International Airport for your departure flight. End of tour."
+    }
+  }
 }
+  }
 }
